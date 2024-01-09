@@ -1,9 +1,11 @@
-Kitronik_STOPbit.trafficLightLED(Kitronik_STOPbit.LightColours.Red, Kitronik_STOPbit.DisplayLights.On)
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.A)) {
-        Kitronik_STOPbit.trafficLightLED(Kitronik_STOPbit.LightColours.Green, Kitronik_STOPbit.DisplayLights.On)
-        basic.pause(5000)
-    } else {
-        Kitronik_STOPbit.trafficLightLED(Kitronik_STOPbit.LightColours.Red, Kitronik_STOPbit.DisplayLights.On)
-    }
+input.onGesture(Gesture.Shake, function () {
+    basic.showString("" + (randint(0, 7)))
+    basic.pause(1000)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
 })
